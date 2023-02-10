@@ -101,9 +101,8 @@ finalResult.sort((a, b) => { return a - b } );
         <div class="number">${finalResult[i-1]}</div></div>`
     }
 
-
     function reloadPage(){
         window.location.reload();
     }
     const refreshBTN = document.querySelector('.refreshBTN')
-    refreshBTN.addEventListener('click',reloadPage())
+    refreshBTN.addEventListener('click',function(){reloadPage()})
