@@ -58,11 +58,11 @@
         allCount[i] = count;
         count = 0;
     }
-    console.log(allCount)
+   
     
     let bestResult = Math.max(...allCount)
     let selectNum = 0;
-    console.log(bestResult)
+
     let countSameLN = 0;
     for(let i = 0; i < allCount.length ; i++)
     {   
@@ -89,7 +89,7 @@
 
    let finalResult = checkLuckyNumber(resultArr);
 finalResult.sort((a, b) => { return a - b } );
-  console.log(finalResult);
+
 
   let Rtext = [];
     for(let i = 1; i <= 6 ; i++)
@@ -104,5 +104,5 @@ finalResult.sort((a, b) => { return a - b } );
     function reloadPage(){
         window.location.reload();
     }
-    const refreshBTN = document.querySelector('.refreshBTN')
-    refreshBTN.addEventListener('click',function(){reloadPage()})
+    const refreshBTN = document.querySelector('.refreshBTN');
+    refreshBTN.addEventListener('click',function(){ reloadPage();})
