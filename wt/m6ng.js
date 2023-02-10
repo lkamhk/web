@@ -102,4 +102,4 @@ finalResult.sort((a, b) => { return a - b } );
     }
 
     const refreshBTN = document.querySelector('.refreshBTN')
-    refreshBTN.addEventListener('click',function(){window.location.reload()})
+    refreshBTN.addEventListener('click',function(){reloadPage()})
