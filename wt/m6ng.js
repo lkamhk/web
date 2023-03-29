@@ -1,5 +1,36 @@
- 
-    let allNumArr = [];
+  //screen
+ ! function () {
+    var viewport = document.getElementById('viewport');
+    var dw = null;
+    var screenChange = document.getElementById('screen-change');
+    function a() {
+        if (document.body.clientHeight > document.body.clientWidth) {
+            dw = 750;        //页面的高度
+            screenChange.classList.remove('h');
+            screenChange.classList.add('w');
+        } else if (document.body.clientHeight < document.body.clientWidth) {
+            dw = 1334;        //页面的宽度
+        }
+        viewport.setAttribute('content', 'width=' + dw + ', user-scalable=no')
+    }
+    a();
+    window.addEventListener("orientationchange", function () {
+        if (window.orientation == 0) {
+            screenChange.classList.remove('h');
+            screenChange.classList.add('w');
+            dw = 750;        //页面的高度
+            viewport.setAttribute('content', 'width=' + dw + ', user-scalable=no')
+        } else if (window.orientation == 90) {
+            screenChange.classList.remove('w');
+            screenChange.classList.add('h');
+            dw = 1334;        //页面的宽度
+            viewport.setAttribute('content', 'width=' + dw + ', user-scalable=no')
+        }
+    }, false);
+}(window);
+
+    
+let allNumArr = [];
     let resultArr = [];
     // creat number 1-49
     for(let i = 0; i <49 ; i++)
