@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="m6ng.css">
+  <link rel="stylesheet" href="/web/iconFont/css/all.css">
+  <title>六合彩號碼產生器</title>
+
+</head>
+
+<body id="screen-change" class="h">
+  <a class="back" href="/web/index.html"><i class="fas fa-arrow-alt-circle-left"></i></a>
+  <div class="refreshBTN"><i class="fas fa-redo"></i></div>
+  <div class="Rtext1"></div>
+  <div class="Rtext2"></div>
+  <div class="Rtext3"></div>
+  <div class="Rtext4"></div>
+  <div class="Rtext5"></div>
+  <div class="Rtext6"></div>
+ 
+
+  <svg>
+    <filter id="wavy">
+      <feTurbulence x="0" y="0" baseFrequency="0.0001" numOctaves="5" seed="2">
+        <animate attributeName="baseFrequency" dur="30s" values="0.02;0.005;0.02" repeatCount="indefinite">
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" scale="20">
+    </filter>
+    <filter id="font-wavy">
+      <feTurbulence x="0" y="0" baseFrequency="0.01 0.02" numOctaves="1" seed="1">
+        <animate attributeName="baseFrequency" dur="60s" values="0.02;0.005;0.02" repeatCount="indefinite">
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" scale="1">
+    </filter>
+  </svg>
+  <script src="m6ng.js"></script>
+</body>
+
+</html>
