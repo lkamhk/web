@@ -64,7 +64,7 @@ function genControl () {
     //gen 6 set number
     for (let i = 0; i < 6; i++) {
         resultArr[i] = gen6Num(allNumArr)
-        console.log(resultArr[i])
+        // console.log(resultArr[i])
 
     }
 
@@ -84,11 +84,11 @@ function genControl () {
             allCount[i] = count
             count = 0
         }
-        console.log(allCount)
+        // console.log(allCount)
 
         let bestResult = Math.max(...allCount)
         let selectNum = 0
-        console.log(bestResult)
+        // console.log(bestResult)
         let countSameLN = 0
         for (let i = 0; i < allCount.length; i++) {
             if (allCount[i] == bestResult) {
@@ -113,7 +113,7 @@ function genControl () {
 
     finalResult = checkLuckyNumber(resultArr)
     finalResult.sort((a, b) => { return a - b })
-    console.log(finalResult)
+    // console.log(finalResult)
 
 }
 function webRender () {
