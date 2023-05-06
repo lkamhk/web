@@ -2,6 +2,7 @@ let localMode = localStorage.getItem("genMode")
 
 if (!localMode) {
     localStorage.setItem("genMode", "allRandom")
+    localMode = localStorage.getItem("genMode")
 }
 
 //screen
@@ -61,8 +62,17 @@ if (localMode == 'allRandom') {
 const refreshBTN = document.querySelector('.refreshBTN')
 
 refreshBTN.addEventListener('click', function () {
-    genControl()
+  
+    if (localMode == 'allRandom') {
+    finalResult = gen6Num(allNumArr)
     reRen()
+    }
+
+    if (localMode == 'metaphysics') {
+        genControl()
+        reRen()
+        }
+   
 })
 
 
