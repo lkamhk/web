@@ -7,7 +7,6 @@
   <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="m6ng.css">
-  <link rel="stylesheet" href="/web/iconFont/css/all.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <title>Mark Six Number Generator</title>
 
@@ -16,29 +15,34 @@
 <body id="screen-change" class="h">
   <a class="back" href="https://nextjsporfolio.vercel.app/projects"><i class='bx bx-arrow-back'></i></a>
 
-  <div class="title gradient-border"><h1 >Mark <br> Six <br> Number <br> Generator</h1></div>
-  <div class="refreshBTN"><i class='bx bx-refresh' ></i></div>
-  <div class="Rtext1"></div>
-  <div class="Rtext2"></div>
-  <div class="Rtext3"></div>
-  <div class="Rtext4"></div>
-  <div class="Rtext5"></div>
-  <div class="Rtext6"></div>
- 
+  <div class="title gradient-border">
+    <h1>Mark <br> Six <br> Number <br> Generator</h1>
+  </div>
+  <div class="refreshBTN"><i class='bx bx-refresh'></i></div>
+  <div class="container">
+    <div class="Rtext1"></div>
+    <div class="Rtext2"></div>
+    <div class="Rtext3"></div>
+    <div class="Rtext4"></div>
+    <div class="Rtext5"></div>
+    <div class="Rtext6"></div>
+  </div>
+
+
 
   <svg>
     <filter id="wavy">
-      <feTurbulence x="0" y="0" baseFrequency="0.0001" numOctaves="5" seed="2">
+      <feTurbulence x="0" y="0" type="turbulence" baseFrequency="0.1" numOctaves="5" seed="5" result="turbulence">
+        <animate attributeName="baseFrequency" dur="30s" values="0.03;0.02;0.03" repeatCount="indefinite">
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" scale="20">
+    </filter>
+    <!-- <filter id="font-wavy">
+      <feTurbulence x="0" y="0" baseFrequency="0.01 0.02" numOctaves="5" seed="1" > 
         <animate attributeName="baseFrequency" dur="30s" values="0.02;0.005;0.02" repeatCount="indefinite">
       </feTurbulence>
-      <feDisplacementMap in="SourceGraphic" scale="20">
-    </filter>
-    <filter id="font-wavy">
-      <feTurbulence x="0" y="0" baseFrequency="0.01 0.02" numOctaves="1" seed="1">
-        <animate attributeName="baseFrequency" dur="60s" values="0.02;0.005;0.02" repeatCount="indefinite">
-      </feTurbulence>
-      <feDisplacementMap in="SourceGraphic" scale="1">
-    </filter>
+      <feDisplacementMap in="SourceGraphic" scale="10">
+    </filter> -->
   </svg>
   <script src="m6ng.js"></script>
 </body>
