@@ -30,20 +30,9 @@
 
 
 
-  <svg>
-    <filter id="wavy">
-      <feTurbulence x="0" y="0" type="turbulence" baseFrequency="0.1" numOctaves="5" seed="5" result="turbulence">
-        <animate attributeName="baseFrequency" dur="30s" values="0.03;0.02;0.03" repeatCount="indefinite">
-            </feTurbulence>
-            <feDisplacementMap in="SourceGraphic" scale="20">
-    </filter>
-    <!-- <filter id="font-wavy">
-      <feTurbulence x="0" y="0" baseFrequency="0.01 0.02" numOctaves="5" seed="1" > 
-        <animate attributeName="baseFrequency" dur="30s" values="0.02;0.005;0.02" repeatCount="indefinite">
-      </feTurbulence>
-      <feDisplacementMap in="SourceGraphic" scale="10">
-    </filter> -->
-  </svg>
+  <svg id="circleWave"></svg>
+   
+
   <script src="m6ng.js"></script>
 </body>
 

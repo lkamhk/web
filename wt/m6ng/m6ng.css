@@ -105,13 +105,13 @@ body {
 .refreshBTN {
   cursor: pointer;
   position: absolute;
-  top: 80%;
+  top: 70%;
   left: 50%-100px;
-  width: 100px;
-  height: 100px;
+  /* width: 200px;
+  height: 200px; */
   /* color: #f5f5f5; */
 
-  font-size: 80px;
+  font-size: Max(1rem, Min(8rem, calc(100vw* 8/75)));
 
   /* filter: url(#font-wavy) blur(0.1px); */
 
@@ -205,6 +205,7 @@ body {
 }
 
 /* effect*/
+
 .container {
   display: flex;
   width: 100%;
@@ -439,11 +440,7 @@ svg {
   .refreshBTN {
     position: absolute;
     top: 2%;
-    left: 50%-50px;
-    width: 50px;
-    height: 50px;
-    color: #f5f5f5;
-    font-size: 50px;
+
   }
 
   .circle:before {

@@ -5,7 +5,7 @@ if (!localMode) {
     localMode = localStorage.getItem("genMode")
 }
 
-//screen
+//must 16:9
 ! function () {
     var viewport = document.getElementById('viewport')
     var dw = null
@@ -44,6 +44,35 @@ let allNumArr = []
 let resultArr = []
 let finalResult = []
 
+//svg effect
+const SVG_NS = 'http://www.w3.org/2000/svg';
+
+let createfilter = document.createElementNS(SVG_NS, 'filter');
+createfilter.setAttribute("id","wavy");
+
+let turbulence =document.createElementNS(SVG_NS, 'feTurbulence');
+turbulence.setAttributeNS(null,"type","turbulence");
+turbulence.setAttributeNS(null,"x","0");
+turbulence.setAttributeNS(null,"y","0");
+turbulence.setAttributeNS(null,"baseFrequency","1");
+turbulence.setAttributeNS(null,"numOctaves","999");
+turbulence.setAttributeNS(null,"seed","9");
+
+let animate =document.createElementNS(SVG_NS, 'animate');
+animate.setAttributeNS(null,"attributeName","baseFrequency");
+animate.setAttributeNS(null,"dur","10s");
+animate.setAttributeNS(null,"values","0.04;0.02;0.04");
+animate.setAttributeNS(null,"repeatCount","indefinite");
+
+var dispMap = document.createElementNS(SVG_NS, 'feDisplacementMap');
+dispMap.setAttributeNS(null,"in", "SourceGraphic");
+dispMap.setAttributeNS(null,"scale", "20");
+
+createfilter.appendChild(turbulence);
+createfilter.appendChild(dispMap);
+turbulence.appendChild(animate)
+circleWave.appendChild(createfilter);
+
 //switch mode
 if (localMode == 'allRandom') {
     // creat number 1-49
@@ -78,7 +107,7 @@ refreshBTN.addEventListener('click', function () {
 
 
 
-//gen a random 6 number
+//gen  random 6 number
 function gen6Num (allNumArr) {
     let result = []
     for (let i = allNumArr.length - 1; i > 0; i--) {
