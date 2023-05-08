@@ -18,7 +18,7 @@ if (!localMode) {
         } else if (document.body.clientHeight < document.body.clientWidth) {
             dw = 1334
         }
-        viewport.setAttribute('content', 'width=' + dw + ', user-scalable=no')
+        viewport.setAttribute('content', 'width=' + dw )
     }
     a()
     window.addEventListener("orientationchange", function () {
@@ -26,20 +26,17 @@ if (!localMode) {
             screenChange.classList.remove('h')
             screenChange.classList.add('w')
             dw = 750
-            viewport.setAttribute('content', 'width=' + dw + ', user-scalable=no')
+            viewport.setAttribute('content', 'width=' + dw )
         } else if (window.orientation == 90) {
             screenChange.classList.remove('w')
             screenChange.classList.add('h')
             dw = 1334
-            viewport.setAttribute('content', 'width=' + dw + ', user-scalable=no')
+            viewport.setAttribute('content', 'width=' + dw  )
         }
     }, false)
 }(window)
 
-let genMode = {
-    allRandam: '',
-    metaphysics: '',
-}
+
 let allNumArr = []
 let resultArr = []
 let finalResult = []

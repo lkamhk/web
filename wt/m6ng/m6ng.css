@@ -47,7 +47,11 @@ body {
   -webkit-transform: translate(-50%, -50%)
 }
 
-
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .title {
   width: 20vw;
