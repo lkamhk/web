@@ -1,1 +1,46 @@
+<!DOCTYPE HTML>
+<html>
 
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Timer Web</title>
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link href="https://fonts.cdnfonts.com/css/alarm-clock" rel="stylesheet">
+	<link href="mystyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<audio id="alarm1" source src="alarm1.wav" type="audio/mpeg"></audio>
+	<audio id="alarm2" source src="alarm2.wav" type="audio/mpeg"></audio>
+	<main>
+		<div class="container_loop">
+			<div class="loop">
+				<h1>
+					<span>THIS IS</span> <i>A</i> <b>TASK</b> TIMER
+				</h1>
+			</div>
+		</div>
+		<div id="showbox"></div>
+		<div class="menuL">
+			<div id="nextTaskTittle"> <i class='bx bx-task'></i>&nbsp;Next Task</div>
+			<span class='line-br'></span>
+			<div class="nextTaskContainer"> <i class='bx bx-right-arrow'></i>  <span id="nextTask"></span> </div>
+			<div id="pastTaskTittle" hidden> Pre Task </div>
+			<div id="pastTask" hidden></div>
+			<div class="soundSelect">
+				<i class='bx bx-music'></i>
+				<select name="soundselect"" id="alarm-clock">
+					<option value="alarm1" music="audio1">alarm 1</option>
+					<option value="alarm2" music="audio2">alarm 2</option>
+				</select>
+				<div class="playAudio"><i class='bx bx-play-circle'></i></div>
+				<div class="stopAudio"><i class='bx bx-stop-circle'></i></div>
+			</div>
+		</div>
+	</main>
+	<script src="index.js"></script>
+</body>
+
+</html>
