@@ -1,6 +1,5 @@
 <!DOCTYPE HTML>
-<html>
-
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,27 +10,20 @@
 	<link href="index.css" rel="stylesheet" type="text/css">
 	<link href="addTask.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
 	<audio id="alarm1" source src="alarm1.wav" type="audio/mpeg"></audio>
 	<audio id="alarm2" source src="alarm2.wav" type="audio/mpeg"></audio>
-
-
 	<div class="addTaskMenuContainer">
-
 		<div class="addTaskMenu">
 			<div class="close-menu-btn">X</div>
 			<div class="print-task">
 				<div class="task-header">
 					<h3 class="time-title">Time</h3>
-					<h3 class="task-title">Task Content</h3>					
+					<h3 class="task-title">Task Content</h3>
 				</div>
 				<ul class="write-in-div">
-					<!-- <div class="write-time"></div>
-					<div class="write-content"></div> -->
-					</ul>
+				</ul>
 			</div>
-
 			<div class="print-add-ctn">
 				<div class="print-add">
 					<input type="time" size="100" id="input-time">
@@ -39,13 +31,9 @@
 					<button class="add-btn" id="add-btn" role="button">Add Task</button>
 				</div>
 			</div>
-
 		</div>
-
 	</div>
-
 	<main>
-
 		<div class="container_loop">
 			<div class="loop">
 				<h1>
@@ -54,16 +42,12 @@
 			</div>
 		</div>
 		<div id="showbox"></div>
-
 		<div class="menuL">
-
 			<div class="menu-sub">
-
-				<div class="notice btn">
+				<div class="noticeBTN btn">
 					<i class='bx bxs-bell-ring'></i>
 				</div>
 			</div>
-
 			<div id="nextTaskTittle">
 				<i class='bx bx-task'></i>&nbsp;Next Task
 			</div>
@@ -73,16 +57,12 @@
 			</div>
 			<div id="pastTaskTittle" hidden> Pre Task </div>
 			<div id="pastTask" hidden></div>
-
 			<div class="addtask btn">
-
 				<i class='bx bx-plus'></i>
 			</div>
 			<div class="soundSelect">
-
 				<label for="select"><i class='bx bx-music'></i></label>
-				<select name="soundselect"" id=" alarm-clock">
-
+				<select name="soundselect" id="alarm-clock">
 					<option value="alarm1" music="audio1">alarm 1</option>
 					<option value="alarm2" music="audio2">alarm 2</option>
 				</select>
@@ -93,5 +73,4 @@
 	</main>
 	<script src="index.js"></script>
 </body>
-
 </html>
