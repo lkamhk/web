@@ -1,0 +1,167 @@
+.addTaskMenuContainer{
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.close-menu-btn{
+  z-index: 999;
+  font-size: 30px;
+  color: #00C896;
+  border: 1px solid #698086;
+  position: absolute;
+  right: -20px;
+  cursor: pointer;
+}
+
+.addTaskMenu {
+  z-index: 999;
+  /* display: block; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: none;
+  width: 64vw;
+  height: 100vh;
+  background-color: #f5f5f5;
+  opacity: 0.8;
+}
+
+
+
+/* render task */
+
+
+.print-task{
+  width: 100%;
+  height: 80%;
+  padding: 15px;
+  text-align: center;
+  background: #000;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  /* align-content: start; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-header{
+  display: inline-block;
+  text-align: center;
+  /* align-items: start;
+  align-content: start;
+  text-align:start; */
+  color: #F9B464;
+  width: 100%;
+  height: 2em;
+}
+.time-title{
+  display: inline-block;
+  width:20%  ;
+
+  text-align: center;
+}
+.task-title{
+  display: inline-block;
+  width: 70%;
+
+  text-align: center;
+}
+.write-in-div{
+  z-index: 999;
+  color: #00C896;
+  position: absolute;
+  margin-top: 50px;
+  width: 100%;
+  height: auto;
+  white-space: nowrap;
+  
+}
+.write-in-div > li{
+  display: flex;
+  color: #00C896;
+  justify-content: space-around;
+  width: 100%;
+  height: 2em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.write-time{
+display: inline-block;
+  width: 20%;
+}
+.write-content{
+  display: inline-block;
+  width: 70%;
+   overflow: hidden;
+}
+
+/* add menu botton part */
+.print-add-ctn {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+#input-time{
+  display: inline-block;
+  height: 3em;
+  width: 100px;
+}
+
+#input-text{
+  display: inline-block;
+  height: 3em;
+  width: 100px;
+}
+
+
+.print-add .add-btn {
+
+  width: 100px;
+  height: 20px;
+   /* font-size: Max(1.5rem, Min(1.5rem, calc(100vw * 1.5/75))); */
+   /* line-height: Max(1.5rem, Min(1.5rem, calc(100vw * 1.5/75))); */
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #3B3B3B;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 10px;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+}
+
+.addTaskMenu .add-btn:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+

@@ -1,13 +1,67 @@
 'use strict'
+//declare
 let list
 let ah
 let am
 let as
 let noticeON = false
 let selectedAudio = document.querySelector('#alarm1')
+let Task_list = [
+];
+
+const addTaskHandle = document.querySelector('.addtask')
+const addTaskMenu = document.querySelector('.addTaskMenu')
+const addTaskbtn = document.querySelector('.add-btn')
+const printlist = document.querySelector('.write-in-div')
+const input_text = document.querySelector('#input-text')
+const input_time = document.querySelector('#input-time')
+const closemenubtn = document.querySelector('.close-menu-btn')
+
 setInterval(() => {
 	showTime()
 }, 0)
+
+
+//show and close add task menu
+closemenubtn.addEventListener('click',function(){
+	addTaskMenu.style.display = 'none';
+})
+let localTask = window.sessionStorage.userLoaclTask;
+addTaskHandle.addEventListener('click',()=> { openaddTask()})
+addTaskbtn.addEventListener('click',function(){
+
+	if(input_time.value && input_text.value){
+		let valueToNum = input_time.value.split(':');
+		let newTask = [valueToNum[0],valueToNum[1],input_text.value];
+		console.log(Task_list.includes([valueToNum[0],valueToNum[1],input_text.value]))
+		
+		if(!Task_list.includes(newTask)){
+			Task_list.push(newTask)
+			Task_list.sort()
+			printTaskForItem()
+			input_text.value = ''
+		}
+
+	}
+	
+	
+
+})
+
+function printTaskForItem(){
+	let temp =''
+	for (const key in Task_list) {
+		temp += `<li class='id-${key}'><div class="write-in-time">${Task_list[key][0]}:${Task_list[key][1]}</div><div class="write-in-content">${Task_list[key][2]}</div><li>`
+	}
+
+		printlist.innerHTML = temp
+	
+}
+function openaddTask(){
+	addTaskMenu.style.display = 'block';
+
+}
+
 function showTime () {
 	let Sdate = new Date()
 	let h = Sdate.getHours() // 0 - 23 
@@ -43,15 +97,7 @@ function fixtshow () {
 }
 
 function nextTaskf (ah, am, aw, as) {
-	let Task_list = [
-		[0, 19, "Test End"],
-		[1, 19, "Test End"],
-		[2, 19, "Test End"],
-		[3, 29, "Test End"],
-		[4, 54, "Test End"],
-		[23, 54, "Test End"],
-		[23, 55, "Test End"]
-	];
+
 	list = Task_list;
 	let x;
 	let haveNextTask = [];
