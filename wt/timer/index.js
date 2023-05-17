@@ -1,22 +1,25 @@
 'use strict'
 //declare
-let list
-let ah
-let am
-let as
-let noticeON = false
-let Task_list = []
-let selectedAudio = document.querySelector('#alarm1')
-const playAudio = document.querySelector('.playAudio')
-const stopAudio = document.querySelector('.stopAudio')
-const changeAudio = document.querySelector('#alarm-clock')
-const addTaskHandle = document.querySelector('.addtask')
-const addTaskMenu = document.querySelector('.addTaskMenu')
-const addTaskbtn = document.querySelector('.add-btn')
-const printlist = document.querySelector('.write-in-div')
-const input_text = document.querySelector('#input-text')
-const input_time = document.querySelector('#input-time')
-const closemenubtn = document.querySelector('.close-menu-btn')
+let list;
+let ah;
+let am;
+let as;
+let noticeON = false;
+let Task_list = [];
+const winWidth = window.innerWidth;
+const winHeight = window.innerHeight;
+let selectedAudio = document.querySelector('#alarm1');
+const playAudio = document.querySelector('.playAudio');
+const stopAudio = document.querySelector('.stopAudio');
+const changeAudio = document.querySelector('#alarm-clock');
+const addTaskHandle = document.querySelector('.addtask');
+const addTaskMenu = document.querySelector('.addTaskMenu');
+const addTaskbtn = document.querySelector('.add-btn');
+const printlist = document.querySelector('.write-in-div');
+const input_text = document.querySelector('#input-text');
+const input_time = document.querySelector('#input-time');
+const closemenubtn = document.querySelector('.close-menu-btn');
+
 
 setInterval(() => {
   showTime()
