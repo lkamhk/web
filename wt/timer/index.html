@@ -22,13 +22,14 @@
 					<h3 class="task-title">Task Content</h3>
 				</div>
 				<ul class="write-in-div">
+		
 				</ul>
 			</div>
 			<div class="print-add-ctn">
 				<div class="print-add">
 					<input type="time" size="100" id="input-time">
 					<input type="text" id="input-text" placeholder="Task">
-					<button class="add-btn" id="add-btn" role="button">+</button>
+					<button class="add-btn" id="add-btn" role="button"><i class='bx bx-list-plus'></i></button>
 				</div>
 			</div>
 		</div>
@@ -57,18 +58,36 @@
 			</div>
 			<div id="pastTaskTittle" hidden> Pre Task </div>
 			<div id="pastTask" hidden></div>
-			<div class="addtask btn">
-				<i class='bx bx-plus'></i>
+
+			<div class="addtask-ctn">
+				<div class="addtask btn">
+					<i class='bx bx-plus'></i>
+				</div>
 			</div>
-			<div class="soundSelect">
-				<label for="select"><i class='bx bx-music'></i></label>
-				<select name="soundselect" id="alarm-clock">
-					<option value="alarm1" music="audio1">alarm 1</option>
-					<option value="alarm2" music="audio2">alarm 2</option>
+			
+			<div class="soundSelect-ctn">
+				<div class="soundSelect" tabindex="1" >
+					<input class="selectopt" name="cusSelect" type="radio" id="opt1" onchange="onchangeAudio(this.value)" value="#alarm1" checked>
+					<label for="opt1" class="option"> <i class='bx bx-music'></i>&nbsp;Alarm 1</label>
+					<input class="selectopt" name="cusSelect" type="radio" id="opt2" onchange="onchangeAudio(this.value)" value="#alarm2">
+					<label for="opt2" class="option"> <i class='bx bx-music'></i>&nbsp;Alarm 2</label>
+				</div>
+				<!-- <div class="playAudio btn"><i class='bx bx-play-circle'></i></div> -->
+				<div class="stopAudio btn"><i class='bx bx-stop-circle'></i></div>
+			</div>
+			
+
+			<!-- <div class="soundSelect">
+				<i class='bx bx-music'></i>
+				<select class="soundselect" id="alarm-clock">
+					<option value="0">Select alarm sound:</option>
+					<option value="alarm1" music="audio1" >alarm 1</option>
+					<option value="alarm2" music="audio2" >alarm 2</option>
 				</select>
 				<div class="playAudio btn"><i class='bx bx-play-circle'></i></div>
 				<div class="stopAudio btn"><i class='bx bx-stop-circle'></i></div>
-			</div>
+			</div> -->
+
 		</div>
 	</main>
 	<script src="index.js"></script>

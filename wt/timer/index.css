@@ -149,47 +149,133 @@ main {
   height: 1px;
 background-color:   #2f2f2f;
 }
-.soundSelect {
-  margin-bottom: 15px;
-  /* position: relative; */
-  text-align: center;
-  /* vertical-align: bottom; */
-  font-size: Max(1rem, Min(1.3rem, calc(100vw * 2.5/75)));
-  line-height: Max(1rem, Min(1.3rem, calc(100vw * 2.5/75)));
-}
-.soundSelect>i {
-  font-size: Max(1rem, Min(1rem, calc(100vw * 1/75)));
-  line-height: Max(1rem, Min(1rem, calc(100vw * 1/75)));
-  margin: 0 0;
-  padding: 0;
-  /* bottom: 1vh;
-  left: 28vw; */
-  /* position: absolute; */
-}
-.soundSelect > .playAudio {
+
+
+.playAudio {
   cursor: pointer;
   display: inline;
-  margin: 5px;
+  margin: 15px;
   font-size: Max(1.5rem, Min(1.5rem, calc(100vw * 1.5/75)));
   line-height: Max(1.5rem, Min(1.5rem, calc(100vw * 1.5/75)));
 }
-.soundSelect > .playAudio:hover{
+.playAudio:hover{
   color: var(--btnhover-color);
 }
-.soundSelect > .stopAudio {
+.stopAudio {
   cursor: pointer;
   display: inline;
-  margin: 5px;
+  margin: auto 5px;
   font-size: Max(1.5rem, Min(1.5rem, calc(100vw * 1.5/75)));
   line-height: Max(1.5rem, Min(1.5rem, calc(100vw * 1.5/75)));
 }
-.soundSelect > .stopAudio:hover {
+ .stopAudio:hover {
   color: var(--btnhover-color);
+}
+
+*/
+.addtask-ctn{
+  width: 100%;
+  height: 50px;
+  position: relative;
 }
 .addtask {
-  text-align: end;
-  margin-right: 15px;
+  position: absolute;
+  width: 50px;
+  font-size: 50px;
+  text-align:center;
+  right: 10px;
+  bottom: 1px;
 }
 .addtask:hover{
   color: var(--btnhover-color);
+}
+
+/* custom select menu */
+.soundSelect-ctn{
+  width: 100%;
+  display:flex;
+justify-content: center;
+margin-bottom: 15px;
+}
+.soundSelect {
+  display:flex;
+  flex-direction: column;
+  position:relative;
+  font-size: 1rem;
+  max-width: 150px;
+  min-width: 100px;
+  height:40px;
+}
+
+
+.option {
+  padding:0 30px 0 10px;
+  min-height:40px;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  background:#1b1b1b;
+  border:#2f2f2f solid 1px;
+  position:absolute;
+  top:0;
+  width: 100%;
+  pointer-events:none;
+  order:2;
+  z-index:1;
+  transition:background .4s ease-in-out;
+  box-sizing:border-box;
+  overflow:hidden;
+  white-space:nowrap;
+  
+}
+
+.option:hover {
+
+  background:#2f2f2f;
+}
+
+
+.soundSelect:focus .option {
+
+  position:relative;
+  pointer-events:all;
+}
+
+input.selectopt {
+  opacity:0;
+  position:absolute;
+  left:-99999px;
+}
+
+
+.selectopt:checked + label {
+  order: 1;
+  z-index:2;
+  background:#1b1b1b;
+  /* border-bottom:none; */
+  position:relative;
+}
+
+.selectopt:checked + label:after {
+  content:'';
+  width: 0; 
+	height: 0; 
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid white;
+  position:absolute;
+  right:5px;
+  top:calc(50% - 2.5px);
+  pointer-events:none;
+  z-index:3;
+}
+
+
+.selectopt:checked + label:before{
+  position:absolute;
+  right:0;
+  height: 40px;
+  width: 18px;
+  content: '';
+  background:#666;
 }

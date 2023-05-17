@@ -8,14 +8,15 @@ let noticeON = false;
 let Task_list = [];
 const winWidth = window.innerWidth;
 const winHeight = window.innerHeight;
-let selectedAudio = document.querySelector('#alarm1');
-const playAudio = document.querySelector('.playAudio');
-const stopAudio = document.querySelector('.stopAudio');
-const changeAudio = document.querySelector('#alarm-clock');
+// let selectedAudio = document.querySelector('#alarm1');
+// const playAudio = document.querySelector('.playAudio');
+// const stopAudio = document.querySelector('.stopAudio');
+// const changeAudio = document.querySelector('#alarm-clock');
 const addTaskHandle = document.querySelector('.addtask');
 const addTaskMenu = document.querySelector('.addTaskMenu');
 const addTaskbtn = document.querySelector('.add-btn');
 const printlist = document.querySelector('.write-in-div');
+
 const input_text = document.querySelector('#input-text');
 const input_time = document.querySelector('#input-time');
 const closemenubtn = document.querySelector('.close-menu-btn');
@@ -49,9 +50,12 @@ addTaskbtn.addEventListener('click', function () {
 })
 
 function printTaskForItem() {
-  let temp = ''
+  let temp='';
   for (const key in Task_list) {
-    temp += `<li class='id-${key}' onClick='delTask(this.className)'><div class="write-in-time">${Task_list[key][0]}:${Task_list[key][1]}</div><div class="write-in-content">${Task_list[key][2]}</div><li>`
+    
+  temp += `<li class='id-${key}' onClick='delTask(this.className)'><div class="write-in-time">${Task_list[key][0]}:${Task_list[key][1]}</div><div class="write-in-content">${Task_list[key][2]}</div></li>`
+  
+    
   }
 
   printlist.innerHTML = temp
@@ -152,12 +156,20 @@ function nextTaskf(ah, am, aw, as) {
 }
 
 //audio's  initial , change , control
-playAudio.addEventListener('click', () => tryAudio())
+let selectedAudio = document.querySelector('#alarm1');
+const playAudio = document.querySelector('.playAudio');
+const stopAudio = document.querySelector('.stopAudio');
+
+
+// playAudio.addEventListener('click', () => tryAudio())
 stopAudio.addEventListener('click', () => selectedAudio.pause())
-changeAudio.addEventListener('change', function (e) {
-  if (selectedAudio) selectedAudio.pause()
-  selectedAudio = document.querySelector(`#${e.target.value}`)
-})
+
+
+function onchangeAudio(n){
+    if (selectedAudio) selectedAudio.pause()
+  selectedAudio = document.querySelector(`${n}`)
+  tryAudio()
+}
 function tryAudio() {
   selectedAudio.play()
 }
@@ -207,3 +219,4 @@ function notifyMe(ntTask) {
     })
   }
 }
+
